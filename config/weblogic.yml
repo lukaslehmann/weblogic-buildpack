@@ -20,7 +20,7 @@
 
 version: 12.1.+
 #repository_root: "{default.repository.root}/weblogic"
-repository_root: "http://www.caraweb.ch/transfer/apr14/"
+repository_root: "http://www.caraweb.ch/transfer/apr14/wls"
 
 # preferAppConfig - Use the App bundled configs over the buildpack bundled configs?
 # If set to true, all configs and scripts packaged with the app bundle will be used for domain and server creation.
