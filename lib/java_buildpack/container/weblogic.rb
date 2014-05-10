@@ -34,8 +34,11 @@ module JavaBuildpack::Container
     def initialize(context)
       super(context)
 
+      logger.debug { "Initialize" }
       if supports?
+        logger.debug { "Initialize supports" }
         @wls_version, @wls_uri = JavaBuildpack::Repository::ConfiguredItem
+        logger.debug { "Initialize supports find item" }
         .find_item(@component_name, @configuration) { |candidate_version| candidate_version.check_size(3) }
 
 
@@ -51,7 +54,7 @@ module JavaBuildpack::Container
         @buildpackConfigCacheRoot = BUILDPACK_WLS_CONFIG_CACHE_DIR
 
         load()
-
+        logger.debug { "after load" }
       else
         @wls_version, @wls_uri       = nil, nil
 
