@@ -389,7 +389,7 @@ module JavaBuildpack::Container
       logger.debug { "start config" }
       
       logger.debug { "#{@wlsSandboxRoot}"}
-
+      logger.debug {WLS_CONFIGURE_SCRIPT}
       javaBinary      = Dir.glob("#{@wlsSandboxRoot}" + "/../**/" + JAVA_BINARY)[0]
       configureScript = Dir.glob("#{@wlsSandboxRoot}" + "/**/" + WLS_CONFIGURE_SCRIPT)[0]
 
