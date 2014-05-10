@@ -386,7 +386,9 @@ module JavaBuildpack::Container
       configure_start_time = Time.now
 
       print "-----> Configuring WebLogic under #{@wlsSandboxRoot.relative_path_from(@droplet.root)}\n"
-
+      logger.debug { "start config" }
+      
+      logger.debug { "#{@wlsSandboxRoot}"}
 
       javaBinary      = Dir.glob("#{@wlsSandboxRoot}" + "/../**/" + JAVA_BINARY)[0]
       configureScript = Dir.glob("#{@wlsSandboxRoot}" + "/**/" + WLS_CONFIGURE_SCRIPT)[0]
