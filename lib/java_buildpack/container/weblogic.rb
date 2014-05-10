@@ -38,13 +38,14 @@ module JavaBuildpack::Container
       if supports?
         logger.debug { "Initialize supports" }
         @wls_version, @wls_uri = JavaBuildpack::Repository::ConfiguredItem
-        logger.debug { "Initialize supports find item" }
         .find_item(@component_name, @configuration) { |candidate_version| candidate_version.check_size(3) }
-
+        
+        logger.debug { "Initialize supports find item" }
 
         @preferAppConfig = @configuration[PREFER_APP_CONFIG]
         @startInWlxMode  = @configuration[START_IN_WLX_MODE]
-
+        logger.debug {@configuration[PREFER_APP_CONFIG]}
+        logger.debug {@startInWlxMode }
         @wlsSandboxRoot           = @droplet.sandbox
         @wlsDomainPath            = @wlsSandboxRoot + WLS_DOMAIN_PATH
         @appConfigCacheRoot       = @application.root + APP_WLS_CONFIG_CACHE_DIR
